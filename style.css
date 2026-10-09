@@ -1,0 +1,236 @@
+/* Box-Sizing Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f9;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Footer Styling */
+header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+/* Main Layout Grid/Column */
+main {
+    max-width: 700px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.app-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.app-card h2 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+}
+
+/* Flexbox Form Layout */
+#note-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+input[type="text"], select {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* Search Bar Styling */
+.search-container {
+    margin-bottom: 1rem;
+}
+
+/* Status Bar & Buttons */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.danger-btn {
+    background-color: #e74c3c;
+}
+
+.danger-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Validation Error Style */
+#error-message {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    min-height: 1.5rem;
+}
+
+/* Note Output Cards Styling */
+#notes-list {
+    list-style: none;
+}
+
+.note-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.note-text {
+    font-size: 1.05rem;
+    word-break: break-word;
+}
+
+.note-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin-top: 0.5rem;
+}
+
+.note-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+/* Category Specific Styles (Distinct Left Borders & Badges) */
+.category-personal {
+    border-left: 6px solid #008080; /* Teal */
+}
+.category-personal .note-badge {
+    background-color: #008080;
+}
+
+.category-work {
+    border-left: 6px solid #8b0000; /* Dark Red */
+}
+.category-work .note-badge {
+    background-color: #8b0000;
+}
+
+.category-study {
+    border-left: 6px solid #0000ff; /* Blue */
+}
+.category-study .note-badge {
+    background-color: #0000ff;
+}
+
+.delete-btn {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+}
+
+.no-notes-msg {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 2rem 0;
+    font-style: italic;
+}
+
+/* Responsiveness Media Query (< 600px) */
+@media (max-width: 600px) {
+    #note-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
